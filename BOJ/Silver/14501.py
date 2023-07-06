@@ -1,23 +1,17 @@
-# 14501 - 그리디 아님
+# 14501** - 그리디 아님... DP임
 
-catalog = [[0, 0]]
+catalog = []
 
 N = int(input())
 for i in range(N):
     a, b = map(int, input().split(" "))
     catalog.append([a, b])
 
-revenue = []
+revenue = [0] * (N+1)
 
-for i in range(1, N+1):
-    result = 0
-    k = i
-    while k <= N:
-        if k + catalog[k][0] > N:
-            break
-        else:
-            result += catalog[k][1]
-            k += catalog[k][0]
-    revenue.append(result)
+for i in range(N):
+    for j in range(i+catalog[i][0], N+1):
+        if revenue[j] < revenue[i] + catalog[i][1]:
+            revenue[j] = revenue[i] + catalog[i][1]
     
 print(max(revenue))
