@@ -1,7 +1,7 @@
-# 1964
-# 5 12(5+7) 22(5+7+10)
-# 5 5+2 5+5
+# 1964**
+# https://my-coding-notes.tistory.com/474
 
 N = int(input())
-nums = [i for i in range(2, 10000000)]
-print(nums[:5])
+answer = (1+N)*N // 2 # 1부터 N까지의 수의 합
+print((answer*3 + N + 1) % 45678)
+# N번째 단계의 오각형 점: N*3과 오른쪽 아래의 점 1개
