@@ -1,1 +1,3 @@
-3000
+factor
+multiple
+neither
