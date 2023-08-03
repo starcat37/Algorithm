@@ -1,3 +1,2 @@
-factor
-multiple
-neither
+[10]
+10
