@@ -1,17 +1,20 @@
-# 1753
+# 1504
 
 import sys
 input = sys.stdin.readline
 import heapq
 
-V, E = map(int, input().rstrip().split())
-graph = {i:[] for i in range(1, V+1)}
-K = int(input())
-for _ in range(E):
-  u, v, w = map(int, input().rstrip().split())
-  graph[u].append((v, w))
+N, E = map(int, input().rstrip().split())
+graph = {i:[] for i in range(1, N+1)}
+dist = 0
 
-# 다익스트라
+for _ in range(E):
+  a, b, c = map(int, input().rstrip().split())
+  graph[a].append((b, c))
+  graph[b].append((a, c))
+  
+v1, v2 = map(int, input().rstrip().split())
+
 def dijkstra(graph, start):
   distances = {node: float("inf") for node in graph}
   distances[start] = 0
@@ -31,13 +34,13 @@ def dijkstra(graph, start):
         heapq.heappush(queue, (distance, next_dest))
   
   return distances
+  
+dist_1 = dijkstra(graph, 1)
+dist_v1 = dijkstra(graph, v1)
+dist_v2 = dijkstra(graph, v2)
 
-result = dijkstra(graph, K)
-for i in result.items():
-  if i[1] == float("inf"):
-    print("INF")
-  else:
-    print(i[1])
-    
-# https://c4u-rdav.tistory.com/50
-# https://velog.io/@tks7205/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-with-python
+path1 = dist_1[v1] + dist_v1[v2] + dist_v2[N]
+path2 = dist_1[v2] + dist_v2[v1] + dist_v1[N]
+result = min(path1, path2)
+
+print(result if result != float("inf") else -1)
