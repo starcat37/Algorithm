@@ -47,6 +47,7 @@ bee_2_beehive_rightmost = 0
 
 min_value = min(sites[1:-1])
 min_indices = [i for i, x in enumerate(sites[1:-1], start=1) if x == min_value]
+# 단순하게 탐색하는 걸로ㄱㄱ
 
 bee_2_beehive_leftmost = min_indices[-1]
 bee_2_beehive_rightmost = min_indices[0]
