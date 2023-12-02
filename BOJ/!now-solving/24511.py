@@ -16,6 +16,8 @@ elements = list(map(int, input().split()))
 queuestack = dict()
 for i in range(N):
   queuestack[i] = (types[i], deque([inits[i]]))
+
+print(queuestack)
   
 # 각 주어진 요소들 삽입
 for j in range(M):
