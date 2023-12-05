@@ -1,4 +1,7 @@
-Possible
-Possible
-Possible
-Impossible
+1
+4
+3
+21
+135
+1033
+8392

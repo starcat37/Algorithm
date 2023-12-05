@@ -1,5 +1,8 @@
-4
-a a
-ab ba
-ring gnir
-newt twan
+1
+10
+13
+100
+1000
+10000
+100000
+0
