@@ -1,4 +1,9 @@
-g Programming Contest
-n New Zealand
-x This is quite a simple problem.
-#
+6 3 2
+calculus 100
+probability 70
+physics 50
+chemistry 80
+python 90
+algorithm 100
+physics
+python
